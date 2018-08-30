@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SSD Login</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+	<h3>Welcome, Enter The Login Details</h3>
+	<form method="POST" action="/login" modelAttribute="User">
+		<table>
+			<tr>
+				UserName:
+				<br>
+				<input type="text" name="username">
+				<br>
+			</tr>
+			<tr>
+				Password:
+				<br>
+				<input type="password" name="password">
+			</tr>
+
+			<tr>
+				<td><input type="submit" value="Submit" /></td>
+			</tr>
+		</table>
+	</form>
+
+
+
+
+</body>
+</html>

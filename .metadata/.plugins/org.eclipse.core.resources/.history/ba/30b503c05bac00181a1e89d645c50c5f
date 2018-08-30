@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Transfer Money</title>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+</head>
+<body>
+<h2>Transfer Money</h2>
+	<h2 th:text="${msg}"></h2>
+
+	<form method="POST" action="/doublecookie" modelAttribute="Account">
+		<table>
+			<tr>
+				Account No:
+				<br>
+				<input type="text" name="account">
+				<br>
+			</tr>
+			<tr>
+				Amount:
+				<br>
+				<input type="number" name="amount">
+			</tr>
+			<input type="hidden" id="csrf" name="csrf" />
+			<tr>
+				<td><input type="submit" value="Submit" id="submit" /></td>
+			</tr>
+		</table>
+	</form>
+
+
+<script type="text/JavaScript">
+		var c = getCookie("c1");
+		var c2 = getCookie("csrf");
+		
+		document.getElementById("csrf").value = c2;
+
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+	</script>
+
+
+
+</body>
+</html>
